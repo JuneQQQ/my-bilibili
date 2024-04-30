@@ -10,4 +10,6 @@ rootProject.name = "my-bilibili"
 include(
     "gateway",
     "user",
+    "video",
+    "common",
 )

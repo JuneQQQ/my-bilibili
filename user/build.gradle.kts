@@ -2,7 +2,6 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     id("buildlogic.kotlin-application-conventions")
-
     id("org.springframework.boot") version "3.2.5"
     id("io.spring.dependency-management") version "1.1.4"
 }
@@ -13,10 +12,18 @@ version = "0.0.1-SNAPSHOT"
 extra["springCloudVersion"] = "2023.0.1"
 
 dependencies {
-//    implementation(project(":gateway"))
+    implementation(project(":common"))
+
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+
+//    implementation("io.zipkin.reporter2:zipkin-reporter-brave")
+//    implementation("io.micrometer:micrometer-tracing-bridge-brave")
+
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
