@@ -6,12 +6,13 @@ spring:
       host: 192.168.0.230
       port: 27017
       database: test
-      username: admin
-      password: "123456"  # 必须加引号
+      username: root
+      password: "password123"  # 必须加引号
       authentication-database: admin # 必须指定
     redis:
       host: 192.168.0.230
       port: 6379
+
 management:
   zipkin:
     tracing:
